@@ -1,16 +1,17 @@
-function SubmitForm(){
+function submitform(){
     var name=document.getElementById("name").value;
     var email=document.getElementById("email").value;
     var phno=document.getElementById("phno").value;
-    if(name && email && phno){
-        document.getElementById("confirmation").innerText="registered successfully";
-        console.log("details",{
-            Name:name,
-            Email:email,
-            phNo:phno
-        });
+    var gender=document.getElementById("gender").value;
+    var dept=document.getElementById("dept").Value;
+    if(name==""||email==""||phno==""||gender==""||dept==""){
+        alert("please fill all the details");
     }
+    else if(!email.includes("@")||!email.includes(".")){
+        alert("please enter valid email");
+    }
+    else if(phno.length!=10||isNaN(phno)) alert("invalid");
     else{
-        alert("motham nimpu ra puma");
+        alert("registered successfully"+name+" "+email+" "+phno);
     }
 }
